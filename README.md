@@ -1,6 +1,6 @@
 # Creative Hands Art Club Website
 
-A clean, mobile-friendly first version for a creative arts club with age-wise classes, gallery, schedule, pricing, contact details, and a registration inquiry form.
+A clean, mobile-friendly multi-page website for a creative arts club with age-wise classes, gallery, schedule, pricing, contact details, and a registration inquiry form.
 
 Open `index.html` directly in a browser, or run a local server from this folder:
 

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register | Creative Hands Art Club</title>
+    <meta name="description" content="Register for a Creative Hands Art Club trial class or monthly seat.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Creative Hands Art Club home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span><strong>Creative Hands</strong><small>Art Club</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span><span class="visually-hidden">Menu</span>
+        </button>
+        <div class="nav-links" id="site-menu">
+          <a href="kids.html">Kids</a>
+          <a href="adults.html">Adults</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a class="nav-cta" href="register.html">Register</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Register</p>
+        <h1>Request a trial class or a monthly seat.</h1>
+        <p>Share the student details and preferred class. The form opens your email app with the request prepared.</p>
+      </section>
+
+      <section class="section register-section">
+        <form class="registration-form" id="registration-form">
+          <div class="form-row">
+            <label for="student-name">Student name</label>
+            <input id="student-name" name="studentName" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="guardian-name">Parent or adult contact name</label>
+            <input id="guardian-name" name="guardianName" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="age-group">Age group</label>
+            <select id="age-group" name="ageGroup" required>
+              <option value="">Select age group</option>
+              <option>4-6 Little Makers</option>
+              <option>7-10 Junior Creators</option>
+              <option>11-15 Teen Studio</option>
+              <option>16+ Adult Studio</option>
+              <option>Family session</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="class-type">Class interest</label>
+            <select id="class-type" name="classType" required>
+              <option value="">Select class</option>
+              <option>Trial class</option>
+              <option>Monthly kids batch</option>
+              <option>Adult creative studio</option>
+              <option>Weekend workshop</option>
+              <option>Birthday or private group</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="preferred-day">Preferred day</label>
+            <select id="preferred-day" name="preferredDay" required>
+              <option value="">Select day</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+              <option>Sunday</option>
+            </select>
+          </div>
+          <div class="form-row full">
+            <label for="message">Notes</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Share experience level, goals, or any scheduling questions."
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Prepare registration email</button>
+            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Creative Hands Art Club</p>
+      <a href="contact.html">Contact</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

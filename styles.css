@@ -139,6 +139,11 @@ textarea {
   outline: none;
 }
 
+.nav-links a[aria-current="page"] {
+  color: var(--teal);
+  background: #eef6ef;
+}
+
 .nav-links .nav-cta {
   margin-left: 6px;
   color: #fff;
@@ -342,6 +347,84 @@ h1 {
   line-height: 1.18;
 }
 
+.page-hero {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(60px, 9vw, 112px) 0 clamp(24px, 4vw, 48px);
+}
+
+.page-hero h1 {
+  max-width: 880px;
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.page-hero p {
+  max-width: 760px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+}
+
+.home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.page-link-card {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: 0 12px 36px rgba(36, 33, 36, 0.07);
+}
+
+.card-index {
+  color: var(--coral-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.page-link-card h3 {
+  margin-top: 34px;
+}
+
+.page-link-card p {
+  color: var(--muted);
+}
+
+.page-link-card a {
+  margin-top: auto;
+  color: var(--teal);
+  font-weight: 850;
+}
+
+.home-cta,
+.split-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, auto);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.home-cta p,
+.split-band p {
+  color: var(--muted);
+}
+
+.split-band {
+  grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.8fr);
+}
+
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
@@ -378,6 +461,15 @@ h1 {
   min-height: 320px;
   padding: 28px;
   overflow: hidden;
+}
+
+.class-card h2,
+.adult-layout h2,
+.contact-panel h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.18;
+  letter-spacing: 0;
 }
 
 .class-card::before {
@@ -451,6 +543,10 @@ h1 {
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 34px;
+}
+
+.gallery-page-grid {
+  margin-top: 0;
 }
 
 .art-tile {
@@ -597,6 +693,12 @@ tr:last-child td {
   margin: 12px 0;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
 .register-section {
   width: 100%;
   max-width: none;
@@ -716,9 +818,13 @@ textarea:focus {
 
   .intro,
   .class-grid,
+  .home-card-grid,
   .adult-layout,
   .pricing-grid,
-  .about-contact {
+  .about-contact,
+  .contact-grid,
+  .home-cta,
+  .split-band {
     grid-template-columns: 1fr;
   }
 
@@ -771,8 +877,17 @@ textarea:focus {
     padding: 58px 0;
   }
 
+  .page-hero {
+    width: min(100% - 28px, 1180px);
+    padding: 52px 0 22px;
+  }
+
   .section h2 {
     font-size: clamp(1.85rem, 10vw, 3rem);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.1rem, 11vw, 3.4rem);
   }
 
   .class-card {

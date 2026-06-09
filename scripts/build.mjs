@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -6,8 +6,14 @@ const dist = path.join(root, "dist");
 const client = path.join(dist, "client");
 const server = path.join(dist, "server");
 
+const htmlFiles = (await readdir(root)).filter((file) => file.endsWith(".html"));
+
 const textAssets = [
-  { route: "/index.html", file: "index.html", type: "text/html; charset=utf-8" },
+  ...htmlFiles.map((file) => ({
+    route: `/${file}`,
+    file,
+    type: "text/html; charset=utf-8"
+  })),
   { route: "/styles.css", file: "styles.css", type: "text/css; charset=utf-8" },
   { route: "/script.js", file: "script.js", type: "application/javascript; charset=utf-8" }
 ];
@@ -21,7 +27,10 @@ await mkdir(client, { recursive: true });
 await mkdir(server, { recursive: true });
 await mkdir(path.join(dist, ".openai"), { recursive: true });
 
-await cp(path.join(root, "index.html"), path.join(client, "index.html"));
+for (const file of htmlFiles) {
+  await cp(path.join(root, file), path.join(client, file));
+}
+
 await cp(path.join(root, "styles.css"), path.join(client, "styles.css"));
 await cp(path.join(root, "script.js"), path.join(client, "script.js"));
 await cp(path.join(root, "assets"), path.join(client, "assets"), { recursive: true });
