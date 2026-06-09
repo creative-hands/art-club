@@ -1,0 +1,4 @@
+dist/
+public/screenshot.png
+.openai/
+.DS_Store
